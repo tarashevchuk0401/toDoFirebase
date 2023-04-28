@@ -1,0 +1,19 @@
+<p>home works!</p>
+
+<form #newTaskForm="ngForm" (ngSubmit)="addNewTask(newTaskForm)">
+    <div>
+        <label for="">Title</label>
+        <input type="text" name="title" ngModel>
+    </div>
+    <button type="submit">add new task</button>
+</form>
+
+<ul *ngFor="let task of  allTasks">
+    <li>{{task.id}}</li>
+    <li>{{task.title}}</li>
+    <li>{{task.isDone}}</li>
+    <button routerLink="task/{{task.id}}">edit</button>
+    <button (click)="delete(task.id)">delete</button>
+</ul>
+
+<!-- <button (click)="edit()">edit</button> -->
