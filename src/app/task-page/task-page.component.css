@@ -1,0 +1,24 @@
+.item {
+    border: 3px solid red;
+    width: 100px;
+    height: 200px;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    border: 2px solid blue;
+}
+
+.first {
+    background-color: aqua;
+}
+
+.second {
+    background-color: green;
+    flex-grow: 1;
+}
+
+.third {
+    background-color: gray;
+}

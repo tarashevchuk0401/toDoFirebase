@@ -1,0 +1,89 @@
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+
+form .empty {
+    width: 116px;
+}
+
+form textarea {
+    font-size: 1.2rem;
+    border: 5px solid rgb(130, 0, 244);
+    border-radius: .5rem;
+}
+
+input {
+    height: 5rem;
+}
+
+
+form button {
+    width: 100px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+
+
+.itemOfList {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    border-radius: .5rem;
+    width: 99%;
+    /* margin: 15px; */
+
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    margin: .2rem;
+    font-size: 2rem;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+
+
+.title {
+    border: 5px solid rgb(130, 0, 244);
+    border-radius: .5rem;
+    padding: .5rem;
+    flex-grow: 1;
+
+}
+
+.all_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+svg {
+    height: 2.5rem;
+    background-color: rgb(130, 0, 244);
+    padding: 0.5rem;
+    border: none;
+    border-radius: .5rem;
+    margin: .5rem;
+    font-size: 1.3rem;
+}
+
+svg:hover {
+    opacity: .9;
+    background-color: rgb(175, 0, 244);
+}

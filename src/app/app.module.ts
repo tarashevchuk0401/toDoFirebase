@@ -8,7 +8,9 @@ import { HomeComponent } from './home/home.component';
 import { TaskPageComponent } from './task-page/task-page.component';
 import { HttpServiceService } from './services/http-service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DoneTasksComponent } from './done-tasks/done-tasks.component';
+import { LogoComponent } from './logo/logo.component';
 
 
 @NgModule({
@@ -16,13 +18,17 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     AuthorizationComponent,
     HomeComponent,
-    TaskPageComponent
+    TaskPageComponent,
+    DoneTasksComponent,
+    LogoComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [HttpServiceService],
   bootstrap: [AppComponent]

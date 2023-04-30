@@ -17,10 +17,10 @@ export class TaskPageComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpServiceService) { }
 
   ngOnInit(): void {
-    this.getAllTasks();
+    this.getCurrentTask();
   }
 
-  getAllTasks() {
+  getCurrentTask() {
     this.httpService.getAllTasks().pipe(map(item => {
       let result = item.find((task: any) => task.id === this.currentTaskId);
       console.log(result)

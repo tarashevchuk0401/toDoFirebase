@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+button {
+    height: 2rem;
+    background-color: rgb(130, 0, 244);
+    border: none;
+    border-radius: .5rem;
+    margin: .2rem;
+    font-size: 1.3rem;
+    align-items: center;
+    justify-content: center;
+} 
+
+button:hover {
+    opacity: .9;
+    background-color: rgb(175, 0, 244);
+    transition: ease .5s;
+}
+
+input {
+    height: 2.7rem;
+    border-radius: .5rem;
+    font-size: 1.2rem;
+    background-color: rgb(236, 217, 252)
+}
+
+li{
+    list-style-type:decimal;
+}
+

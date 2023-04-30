@@ -1,0 +1,12 @@
+main{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(132, 0, 169);
+}
+
+.logo{
+    font-size: 3rem;
+    margin: .5rem;
+    text-transform: lowercase;
+    font-family: 'Vina Sans', cursive;
+}

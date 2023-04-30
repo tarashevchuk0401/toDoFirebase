@@ -1,19 +1,31 @@
-<p>home works!</p>
+<nav>
+    <button routerLink="/done-tasks">Done tasks</button>
+</nav>
 
 <form #newTaskForm="ngForm" (ngSubmit)="addNewTask(newTaskForm)">
-    <div>
-        <label for="">Title</label>
-        <input type="text" name="title" ngModel>
-    </div>
-    <button type="submit">add new task</button>
+    <div class="empty"></div>
+    <textarea name="title" ngModel cols="30" rows="3"></textarea>
+    <button type="submit">Add task</button>
 </form>
 
-<ul *ngFor="let task of  allTasks">
-    <li>{{task.id}}</li>
-    <li>{{task.title}}</li>
-    <li>{{task.isDone}}</li>
-    <button routerLink="task/{{task.id}}">edit</button>
-    <button (click)="delete(task.id)">delete</button>
-</ul>
-
-<!-- <button (click)="edit()">edit</button> -->
+<main>
+    <div class="itemOfList" *ngFor="let task of  allTasks ;let indexOfelement=index">
+        <div class="info">{{indexOfelement +1 }}</div>
+        <div class="info status" *ngIf="!task.isDone">
+            <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/wait.png" width="25" alt="done"></button>
+        </div>
+        <div class="info status" *ngIf="task.isDone">
+           <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/done.png" width="25" alt="done"></button>
+        </div>
+        <div class="title"> {{task.title}}</div>
+        <div class="all_buttons">
+            <!-- <button (click)="changeSatus(task.id, task.isDone)">Done</button> -->
+            <button routerLink="/task/{{task.id}}">
+                <img src="assets/icons/edit.png" width="28" alt="">
+            </button>
+            <button (click)="delete(task.id)">
+                <img src="assets/icons/dalete.png" width="25" alt="">
+            </button>
+        </div>
+    </div>
+</main>

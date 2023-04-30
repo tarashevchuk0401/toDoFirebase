@@ -1,0 +1,48 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 400px;
+    margin: 2rem;
+}
+
+label {
+   margin: 1rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    color: rgb(130, 0, 244);
+    font-weight: 700;
+    margin-top: 1rem;
+}
+ input{
+    margin-top: 1rem;
+ }
+
+.empty{
+    width: 100px;
+}
+
+.error {
+    transition: ease 1s;
+    color: brown;
+}
+
+
+

@@ -12,6 +12,12 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit{
 
   allTasks: Task[] = [];
+  statusDone : any = {
+    isDone: true
+  };
+  statusNotDone : any = {
+    isDone: false
+  };
 
   constructor(private httpService: HttpServiceService, private router: Router){}
 
@@ -20,8 +26,8 @@ export class HomeComponent implements OnInit{
   }
 
   addNewTask(newTaskForm : NgForm){
-    console.log(newTaskForm.value.title)
-    this.httpService.addTask(newTaskForm.value.title).subscribe((task:any) => this.getAllTasks())
+    this.httpService.addTask(newTaskForm.value.title).subscribe((task:any) => this.getAllTasks());
+    newTaskForm.reset()
   }
 
   getAllTasks(){
@@ -32,8 +38,13 @@ export class HomeComponent implements OnInit{
   this.httpService.deleteTask(id).subscribe((task: any) => this.getAllTasks())
  }
 
-//  edit(){
-//   this.router.navigate(['task']);
-//  }
+ changeSatus(taskId: string, taskIsDone: boolean){
+  if(taskIsDone === false){
+    this.httpService.changeStatus(taskId, this.statusDone).subscribe((task:any) => this.getAllTasks())
+  }
+  else this.httpService.changeStatus(taskId, this.statusNotDone).subscribe((task:any) => this.getAllTasks())
+ }
+
+
 
 }
