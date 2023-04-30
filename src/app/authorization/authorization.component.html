@@ -1,5 +1,3 @@
-
-
 <main>
     <!-- <div *ngIf="isLoading">
         <app-loading-spinner></app-loading-spinner>
@@ -7,8 +5,8 @@
     <form #authForm="ngForm" (ngSubmit)="onFormSubmit(authForm)">
         <div class="container">
             <div class="description">
-              <label >Email</label>
-              <label>Password</label>
+                <label>Email</label>
+                <label>Password</label>
             </div>
             <div class="inputs">
                 <div>
@@ -24,17 +22,18 @@
                         <!-- <div>{{getPassworErrors(password)}}</div> -->
                     </div>
                 </div>
-                <div class="error" *ngIf="error">
+                <div class="error_form" *ngIf="error">
                     {{error}}
                 </div>
-                <div>
-                    <button (click)="onFormSubmit(authForm)" [disabled]="authForm.invalid">{{isLoginMode ? "Login" :
-                        "SignUp"}}</button>
-                    <button (click)="onSwitchMode()">Go to {{isLoginMode ? "SignUp" : "Login"}}</button>
+                <div class="all_buttons">
+                    <button (click)="onFormSubmit(authForm)" [ngClass]="{'disabled' : authForm.invalid}"  >{{isLoginMode ? "Login"
+                        :"SignUp"}}</button>
+                    <button (click)="onSwitchMode()"
+                    [ngClass]="{'disabled' : authForm.invalid}"
+                    >Go to {{isLoginMode ? "SignUp" : "Login"}}</button>
                 </div>
             </div>
             <div class="empty"></div>
         </div>
-        
     </form>
 </main>

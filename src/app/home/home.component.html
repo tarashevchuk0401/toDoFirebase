@@ -4,13 +4,14 @@
 
 <form #newTaskForm="ngForm" (ngSubmit)="addNewTask(newTaskForm)">
     <div class="empty"></div>
-    <textarea name="title" ngModel cols="30" rows="3"></textarea>
-    <button type="submit">Add task</button>
+    <textarea class="title"
+    name="title" ngModel cols="30" rows="3"></textarea>
+    <button type="submit" class="add_button">+</button>
 </form>
 
 <main>
     <div class="itemOfList" *ngFor="let task of  allTasks ;let indexOfelement=index">
-        <div class="info">{{indexOfelement +1 }}</div>
+        <div class="info number">{{indexOfelement +1 }}</div>
         <div class="info status" *ngIf="!task.isDone">
             <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/wait.png" width="25" alt="done"></button>
         </div>
@@ -24,7 +25,7 @@
                 <img src="assets/icons/edit.png" width="28" alt="">
             </button>
             <button (click)="delete(task.id)">
-                <img src="assets/icons/dalete.png" width="25" alt="">
+                <img src="assets/icons/dalete.png"  width="25" alt="">
             </button>
         </div>
     </div>

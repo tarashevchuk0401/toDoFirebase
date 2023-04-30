@@ -4,6 +4,7 @@
 
 * {
     box-sizing: border-box;
+    margin: 0px;
 }
 
 body {
@@ -13,26 +14,29 @@ body {
 
 button {
     height: 2rem;
-    background-color: rgb(130, 0, 244);
+    background-color: #a50bd2;
     border: none;
     border-radius: .5rem;
     margin: .2rem;
     font-size: 1.3rem;
     align-items: center;
     justify-content: center;
+    color: rgb(190, 229, 244);
 } 
 
 button:hover {
     opacity: .9;
-    background-color: rgb(175, 0, 244);
-    transition: ease .5s;
+    background-color: #5c82d7;
+    transition: ease .2s;
 }
 
 input {
     height: 2.7rem;
     border-radius: .5rem;
     font-size: 1.2rem;
-    background-color: rgb(236, 217, 252)
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
+    border: none;
 }
 
 li{

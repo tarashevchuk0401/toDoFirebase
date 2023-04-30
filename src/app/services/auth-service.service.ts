@@ -26,7 +26,7 @@ export class AuthServiceService {
   }
 
   getErrorHandler(errorRes: HttpErrorResponse) {
-    let errorMessage = 'No Errors =)'
+    let errorMessage = 'Invalid email or password'
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(errorMessage);
     }

@@ -1,24 +1,39 @@
-.container{
+.container {
     display: flex;
     flex-direction: row;
     width: 95%;
     margin: .5rem;
-    
+
 }
 
-.number{ 
+.number {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 5%;
     flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-grow: 0;
+    margin: .5rem;
     flex-shrink: 1;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
+    border-radius: .5rem;
+
+    
 }
 
-.title{
-    flex-grow: 1;
-    border: 5px solid rgb(130, 0, 244);
+.title {
     border-radius: .5rem;
     padding: .5rem;
-
+    flex-grow: 1;
+    font-size: 1.2rem;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
+    margin: .5rem;
 }
+
+.info {}

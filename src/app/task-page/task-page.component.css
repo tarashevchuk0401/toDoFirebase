@@ -1,24 +1,26 @@
-.item {
-    border: 3px solid red;
-    width: 100px;
-    height: 200px;
-}
-
-.flex-container {
+.container {
+    width: 99%;
     display: flex;
-    width: 100%;
-    border: 2px solid blue;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.first {
-    background-color: aqua;
-}
-
-.second {
-    background-color: green;
+.title {
+    border-radius: .5rem;
+    padding: .5rem;
     flex-grow: 1;
+    font-size: 1.2rem;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
+    margin: .5rem;
+
 }
 
-.third {
-    background-color: gray;
+textarea {
+    margin: 0;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
+    margin: .5rem;
+    border-radius: .5rem;
+    border: none;
 }
