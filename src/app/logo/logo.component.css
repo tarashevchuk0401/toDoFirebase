@@ -20,3 +20,9 @@ main {
     text-transform: lowercase;
     font-family: 'Vina Sans', cursive;
 }
+
+@media (max-width: 760px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+}

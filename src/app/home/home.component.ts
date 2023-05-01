@@ -26,8 +26,9 @@ export class HomeComponent implements OnInit{
   }
 
   addNewTask(newTaskForm : NgForm){
+    if(newTaskForm.value.title.trim())
     this.httpService.addTask(newTaskForm.value.title).subscribe((task:any) => this.getAllTasks());
-    newTaskForm.reset()
+    newTaskForm.reset();
   }
 
   getAllTasks(){
@@ -40,9 +41,9 @@ export class HomeComponent implements OnInit{
 
  changeSatus(taskId: string, taskIsDone: boolean){
   if(taskIsDone === false){
-    this.httpService.changeStatus(taskId, this.statusDone).subscribe((task:any) => this.getAllTasks())
+    this.httpService.changeTask(taskId, this.statusDone).subscribe((task:any) => this.getAllTasks())
   }
-  else this.httpService.changeStatus(taskId, this.statusNotDone).subscribe((task:any) => this.getAllTasks())
+  else this.httpService.changeTask(taskId, this.statusNotDone).subscribe((task:any) => this.getAllTasks())
  }
 
 

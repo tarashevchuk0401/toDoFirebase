@@ -36,7 +36,7 @@ export class HttpServiceService {
     return this.httpClient.delete('https://todofirebase-8a121-default-rtdb.europe-west1.firebasedatabase.app/tasks/' + id + '.json')
   }
 
-  changeStatus(taskId: string, newStatus: any): Observable<any> {
+  changeTask(taskId: string, newStatus: any): Observable<any> {
     return this.httpClient.patch(('https://todofirebase-8a121-default-rtdb.europe-west1.firebasedatabase.app/tasks/' + taskId + '.json'), newStatus)
   }
 

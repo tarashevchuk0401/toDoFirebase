@@ -10,11 +10,13 @@
 body {
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
+    background: linear-gradient(86deg, rgb(143, 120, 224) 45%, rgba(179, 139, 187, 0.947) 100%);
+    background-repeat: repeat-y;
 }
 
 button {
     height: 2rem;
-    background-color: #a50bd2;
+    background-color: #a20bd0;
     border: none;
     border-radius: .5rem;
     margin: .2rem;
@@ -22,12 +24,18 @@ button {
     align-items: center;
     justify-content: center;
     color: rgb(190, 229, 244);
-} 
+    box-shadow: 5px 5px 8px 0px #a20bd0;
+    transition: box-shadow .15s, transform .15s;
+    touch-action: manipulation;
+}
+
+
 
 button:hover {
     opacity: .9;
-    background-color: #5c82d7;
+    background-color: #8d5cd7;
     transition: ease .2s;
+    transform: translateY(2px);
 }
 
 input {
@@ -37,9 +45,19 @@ input {
     background-color: rgb(230, 230, 230);
     box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
     border: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s, -ms-transform .1s, -webkit-transform .1s, transform .1s;
+    user-select: none;
 }
 
-li{
-    list-style-type:decimal;
+li {
+    list-style-type: decimal;
 }
 
+
+@media (max-width: 760px) {
+    button {
+        font-size: .9rem;
+        margin: .2rem;
+    }
+}

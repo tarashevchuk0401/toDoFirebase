@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Task } from '../shared/Task';
 import { HttpServiceService } from '../services/http-service.service';
 import { map } from 'rxjs';
@@ -13,8 +13,12 @@ export class TaskPageComponent implements OnInit {
 
   currentTaskId: string = this.activatedRoute.snapshot.params['id'];
   currentTask: Task[] = [];
+  newText: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute, private httpService: HttpServiceService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute, private httpService: HttpServiceService, 
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
     this.getCurrentTask();
@@ -26,6 +30,14 @@ export class TaskPageComponent implements OnInit {
       console.log(result)
       return result
     })).subscribe((data: any) => this.currentTask.push(data))
+  }
+
+  editTask(){
+    this.httpService.changeTask(this.currentTaskId, {title: this.newText}).subscribe(d => this.goToHomeComponent( ));
+  }
+
+  goToHomeComponent(){
+    this.router.navigate(['home']);
   }
 
 

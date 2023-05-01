@@ -5,7 +5,7 @@
 <form #newTaskForm="ngForm" (ngSubmit)="addNewTask(newTaskForm)">
     <div class="empty"></div>
     <textarea class="title"
-    name="title" ngModel cols="30" rows="3"></textarea>
+    name="title" ngModel cols="30" rows="3" placeholder="Write new task ..."></textarea>
     <button type="submit" class="add_button">+</button>
 </form>
 
