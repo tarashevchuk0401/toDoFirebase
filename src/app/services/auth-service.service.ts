@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../shared/Task';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Subject, catchError, tap, throwError } from 'rxjs';
+import { Observable, Subject, catchError, tap, throwError } from 'rxjs';
 import { User } from '../shared/User';
 import { AuthResponseData } from '../shared/AuthResponseData';
 
@@ -14,18 +14,18 @@ export class AuthServiceService {
 
   constructor(private http: HttpClient) { }
 
-  signUp(email: string, password: string) {
-    return this.http.post<Task>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBtnShSRSygys2Z3XlKrAAAvo838v1q4T0',
+  signUp(email: string, password: string): Observable<Task> {
+    return this.http.post<Task>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E',
       { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler), tap(this.handleUser.bind(this)))
   }
 
 
-  login(email: string, password: string) {
-    return this.http.post<Task>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBtnShSRSygys2Z3XlKrAAAvo838v1q4T0`,
+  login(email: string, password: string): Observable<Task> {
+    return this.http.post<Task>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E`,
       { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler), tap(this.handleUser.bind(this)))
   }
 
-  getErrorHandler(errorRes: HttpErrorResponse) {
+  getErrorHandler(errorRes: HttpErrorResponse): Observable<never> {
     let errorMessage = 'Invalid email or password'
     if (!errorRes.error || !errorRes.error.error) {
       return throwError(errorMessage);

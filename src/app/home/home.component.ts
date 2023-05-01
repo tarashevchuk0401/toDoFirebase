@@ -12,10 +12,10 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit{
 
   allTasks: Task[] = [];
-  statusDone : any = {
+  statusDone  = {
     isDone: true
   };
-  statusNotDone : any = {
+  statusNotDone = {
     isDone: false
   };
 
@@ -25,21 +25,21 @@ export class HomeComponent implements OnInit{
     this.getAllTasks();
   }
 
-  addNewTask(newTaskForm : NgForm){
+  addNewTask(newTaskForm : NgForm): void{
     if(newTaskForm.value.title.trim())
     this.httpService.addTask(newTaskForm.value.title).subscribe((task:any) => this.getAllTasks());
     newTaskForm.reset();
   }
 
-  getAllTasks(){
+  getAllTasks(): void{
     this.httpService.getAllTasks().subscribe((task: any ) => this.allTasks = task);
  }
 
- delete(id: string){
+ delete(id: string): void{
   this.httpService.deleteTask(id).subscribe((task: any) => this.getAllTasks())
  }
 
- changeSatus(taskId: string, taskIsDone: boolean){
+ changeSatus(taskId: string, taskIsDone: boolean): void{
   if(taskIsDone === false){
     this.httpService.changeTask(taskId, this.statusDone).subscribe((task:any) => this.getAllTasks())
   }

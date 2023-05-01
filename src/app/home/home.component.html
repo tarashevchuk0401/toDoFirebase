@@ -1,32 +1,38 @@
-<nav>
-    <button routerLink="/done-tasks">Done tasks</button>
-</nav>
 
-<form #newTaskForm="ngForm" (ngSubmit)="addNewTask(newTaskForm)">
-    <div class="empty"></div>
-    <textarea class="title"
-    name="title" ngModel cols="30" rows="3" placeholder="Write new task ..."></textarea>
-    <button type="submit" class="add_button">+</button>
-</form>
+
 
 <main>
-    <div class="itemOfList" *ngFor="let task of  allTasks ;let indexOfelement=index">
-        <div class="info number">{{indexOfelement +1 }}</div>
-        <div class="info status" *ngIf="!task.isDone">
-            <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/wait.png" width="25" alt="done"></button>
-        </div>
-        <div class="info status" *ngIf="task.isDone">
-           <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/done.png" width="25" alt="done"></button>
-        </div>
-        <div class="title"> {{task.title}}</div>
-        <div class="all_buttons">
-            <!-- <button (click)="changeSatus(task.id, task.isDone)">Done</button> -->
-            <button routerLink="/task/{{task.id}}">
-                <img src="assets/icons/edit.png" width="28" alt="">
-            </button>
-            <button (click)="delete(task.id)">
-                <img src="assets/icons/dalete.png"  width="25" alt="">
-            </button>
+    <div class="empty_in_main"></div>
+    <div class="content_in_main">
+        <nav>
+            <button routerLink="/done-tasks">Done tasks</button>
+        </nav>
+        <form #newTaskForm="ngForm" (ngSubmit)="addNewTask(newTaskForm)">
+            <!-- <div class="empty_in_form"></div> -->
+            <textarea class="title" name="title" ngModel cols="30" rows="3" placeholder="Write new task ..."></textarea>
+            <button type="submit" class="add_button">+</button>
+        </form>
+        <div class="itemOfList" *ngFor="let task of  allTasks ;let indexOfelement=index">
+            <div class="info number">{{indexOfelement +1 }}</div>
+            <div class="info status" *ngIf="!task.isDone">
+                <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/wait.png" width="25"
+                        alt="done"></button>
+            </div>
+            <div class="info status" *ngIf="task.isDone">
+                <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/done.png" width="25"
+                        alt="done"></button>
+            </div>
+            <div class="title"> {{task.title}}</div>
+            <div class="all_buttons">
+                <!-- <button (click)="changeSatus(task.id, task.isDone)">Done</button> -->
+                <button routerLink="/task/{{task.id}}">
+                    <img src="assets/icons/edit.png" width="28" alt="">
+                </button>
+                <button (click)="delete(task.id)">
+                    <img src="assets/icons/dalete.png" width="25" alt="">
+                </button>
+            </div>
         </div>
     </div>
+    <div class="empty_in_main"></div>
 </main>

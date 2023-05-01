@@ -1,7 +1,4 @@
 <main>
-    <!-- <div *ngIf="isLoading">
-        <app-loading-spinner></app-loading-spinner>
-    </div> -->
     <form #authForm="ngForm" (ngSubmit)="onFormSubmit(authForm)">
         <div class="container">
             <div class="description">
@@ -29,7 +26,7 @@
                     <button (click)="onFormSubmit(authForm)" [ngClass]="{'disabled' : authForm.invalid}"  >{{isLoginMode ? "Login"
                         :"SignUp"}}</button>
                     <button (click)="onSwitchMode()"
-                    [ngClass]="{'disabled' : authForm.invalid}"
+                    [ngClass]="{'disabled_button' : authForm.invalid}"
                     >Go to {{isLoginMode ? "SignUp" : "Login"}}</button>
                 </div>
             </div>

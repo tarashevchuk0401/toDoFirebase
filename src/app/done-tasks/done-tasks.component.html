@@ -1,8 +1,17 @@
-
-<div *ngFor="let task of  doneTasks; let indexOfelement = index">
-    <div class="container">
-        <div class="number">{{indexOfelement +1}}</div>
-        <div class="title">{{task.title}}</div>
+<main>
+    <div class="empty"></div>
+    <div class="content">
+       <header>
+        <button class="go_back" routerLink="/home">Back</button>
+        <h2>DONE TASKS</h2>
+        <div class="empty_in_header"></div>
+       </header>
+        <div *ngFor="let task of  doneTasks; let indexOfelement = index">
+            <div class="container">
+                <div class="number">{{indexOfelement +1}}</div>
+                <div class="title">{{task.title}}</div>
+            </div>
+        </div>
     </div>
-
-</div>
+    <div class="empty"></div>
+</main>

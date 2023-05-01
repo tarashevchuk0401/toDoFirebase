@@ -18,7 +18,7 @@ export class AuthorizationComponent {
 
   constructor(private router: Router, private authService: AuthServiceService){}
 
-  onFormSubmit(authForm: NgForm) {
+  onFormSubmit(authForm: NgForm): void{
     if (!authForm.valid) {
       return;
     }
@@ -43,7 +43,7 @@ export class AuthorizationComponent {
     )
   }
 
-  onSwitchMode() {
+  onSwitchMode():void {
     this.isLoginMode = !this.isLoginMode;
   }
 

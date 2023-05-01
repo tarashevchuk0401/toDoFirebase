@@ -1,31 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../shared/Task';
 import { HttpServiceService } from '../services/http-service.service';
-import { filter, map } from 'rxjs';
+import { Observable, filter, interval, map, takeUntil } from 'rxjs';
+import { UnsubscribingService } from '../services/unsubscribing.service';
 
 @Component({
   selector: 'app-done-tasks',
   templateUrl: './done-tasks.component.html',
   styleUrls: ['./done-tasks.component.css']
 })
-export class DoneTasksComponent implements OnInit {
+export class DoneTasksComponent extends UnsubscribingService implements OnInit {
   doneTasks: Task[] = [];
 
-  constructor(private httpService: HttpServiceService) { }
+  src$ = interval(1000);
+
+  constructor(private httpService: HttpServiceService) {
+    super();
+  }
 
   ngOnInit(): void {
     this.getDone();
+    this.src$.pipe(takeUntil(this.unsubscribe$)).subscribe(d => console.log(d))
   }
 
-  getDone() {
+  getDone(): void {
     this.httpService.getAllTasks().pipe(map((item: any) => {
       item.forEach(task => {
         if (task.isDone) this.doneTasks.push(task)
-      })
-    })).subscribe((task: any) => {
-      console.log(this.doneTasks)
-    })
-
+      },
+        (takeUntil(this.unsubscribe$))
+      )
+    })).subscribe();
   }
 
 }

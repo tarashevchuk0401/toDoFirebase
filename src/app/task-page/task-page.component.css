@@ -1,9 +1,4 @@
-.container {
-    width: 99%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
+
 
 .title {
     border-radius: .5rem;
@@ -38,5 +33,29 @@ textarea {
     display: flex;
     justify-content: space-around;
     width: 40%;
-    
+}
+
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.empty {
+ width: 4rem;
+ flex-shrink: 1;
+ flex-grow: 0;
+}
+
+@media (max-width: 760px) {
+    .empty{
+        width: 1px;
+    }
 }
