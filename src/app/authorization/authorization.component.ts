@@ -13,21 +13,17 @@ import { AuthServiceService } from '../services/auth-service.service';
 export class AuthorizationComponent {
 
   isLoginMode: boolean = false;
-  // isLoading: boolean = false;
   error: string = '';
 
   constructor(private router: Router, private authService: AuthServiceService){}
 
   onFormSubmit(authForm: NgForm): void{
+    this.error = '';
+    let authObs: Observable<Task>
+    
     if (!authForm.valid) {
       return;
     }
-
-    // this.isLoading = true;
-    this.error = '';
-
-    let authObs: Observable<Task>
-
     if (this.isLoginMode) {
       authObs = this.authService.login(authForm.value.email, authForm.value.password);
     } else {

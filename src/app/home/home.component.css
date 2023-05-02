@@ -59,6 +59,7 @@ main {
 
 .content_in_main {
     flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .itemOfList {
@@ -104,7 +105,7 @@ main {
     border-radius: .5rem;
     padding: .5rem;
     flex-grow: 1;
-    /* max-width: 90%; */
+    overflow: hidden;
     font-size: 1.2rem;
     background-color: rgb(230, 230, 230);
     box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);

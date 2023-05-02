@@ -7,7 +7,7 @@ main {
     display: flex;
     justify-content: center;
     width: 98%;
-    background: rgb(165, 11, 210);
+    background: #a20bd0;
     background: linear-gradient(90deg, rgba(165, 11, 210, 1) 45%, rgba(92, 130, 215, 0.9473039215686274) 100%);
     border-radius: 1rem;
     margin-top: 0.5rem;
