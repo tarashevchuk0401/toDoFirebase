@@ -10,17 +10,26 @@ import { AuthResponseData } from '../shared/AuthResponseData';
 })
 export class AuthServiceService {
 
+  isLoggedIn: boolean = false
   userSub = new Subject<User>();
 
   constructor(private http: HttpClient) { }
 
+  checkAuthentication(){
+    if(sessionStorage.getItem("isAuthenticated")){
+      console.log('isAuthenticated')
+    }
+  }
+
   signUp(email: string, password: string): Observable<Task> {
+    sessionStorage.setItem("isAuthenticated", 'true');
     return this.http.post<Task>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E',
       { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler), tap(this.handleUser.bind(this)))
   }
 
 
   login(email: string, password: string): Observable<Task> {
+    sessionStorage.setItem("isAuthenticated", 'true');
     return this.http.post<Task>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E`,
       { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler), tap(this.handleUser.bind(this)))
   }

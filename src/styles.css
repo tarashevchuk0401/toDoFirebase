@@ -28,6 +28,8 @@ button {
     box-shadow: 5px 5px 8px 0px #3e1d8b;
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
+    cursor: pointer;
+
 }
 
 

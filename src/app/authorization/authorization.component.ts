@@ -15,11 +15,13 @@ export class AuthorizationComponent {
   isLoginMode: boolean = false;
   error: string = '';
 
+
   constructor(private router: Router, private authService: AuthServiceService){}
 
   onFormSubmit(authForm: NgForm): void{
     this.error = '';
     let authObs: Observable<Task>
+  
     
     if (!authForm.valid) {
       return;
@@ -39,9 +41,18 @@ export class AuthorizationComponent {
     )
   }
 
+
   onSwitchMode():void {
     this.isLoginMode = !this.isLoginMode;
   }
 
+  sessionStorageFalse(){
+    sessionStorage.setItem("isAuthenticated", '')
+    console.log( Boolean(sessionStorage.getItem("isAuthenticated")))
+  }
+  sessionStorageTrue(){
+    sessionStorage.setItem("isAuthenticated", 'sd')
+    console.log( Boolean(sessionStorage.getItem("isAuthenticated")))
+  }
 }
 

@@ -1,12 +1,13 @@
 .wrapper {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    margin:  .2rem;
 }
 
 main {
     display: flex;
     justify-content: center;
-    width: 98%;
     background: #a20bd0;
     background: linear-gradient(90deg, rgba(165, 11, 210, 1) 45%, rgba(92, 130, 215, 0.9473039215686274) 100%);
     border-radius: 1rem;
@@ -19,7 +20,23 @@ main {
     margin: .5rem;
     text-transform: lowercase;
     font-family: 'Vina Sans', cursive;
+    cursor: pointer;
+    
 }
+
+.button_in_logo {
+    display: flex;
+    flex-grow: 0;
+    width: 4rem;
+    padding: .1rem;
+    font-style: 1.2rem;
+}
+
+img{
+    width: 25px;
+}
+
+
 
 @media (max-width: 760px) {
     .logo {

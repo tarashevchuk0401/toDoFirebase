@@ -1,5 +1,8 @@
 <div class="wrapper">
     <main>
-        <div class="logo">ToDoList</div>
+        <div routerLink="/home" class="logo">ToDoList</div>
     </main>
+    <button class="button_in_logo" routerLink="authorization" (click)="logout()" title="LogOut">  
+         <img src="assets/icons/logout.png" alt="">
+    </button>
 </div>

@@ -79,4 +79,8 @@ main {
     .empty {
         width: 1px;
     }
+
+    h2{
+        font-size: 2rem;
+    }
 }
