@@ -8,7 +8,7 @@ import { UnsubscribingService } from '../services/unsubscribing.service';
 @Component({
   selector: 'app-task-page',
   templateUrl: './task-page.component.html',
-  styleUrls: ['./task-page.component.css']
+  styleUrls: ['./task-page.component.scss']
 })
 export class TaskPageComponent extends UnsubscribingService implements OnInit {
 

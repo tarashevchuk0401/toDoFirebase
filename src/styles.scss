@@ -2,6 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Vina+Sans&display=swap');
 
+$color_A1 :#8f78e0;
+$color_A2 :#b38bbbf1 ;
+$color_A3 :#a20bd0;
+$color_A4 :#6b0ada;
+$color_B1 :#000000;
+$color_B1 :#000000;
+$color_button_font :#bee5f4;
+
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -10,14 +18,15 @@
 body {
     margin: 0;
     font-family: 'Noto Sans', sans-serif;
-    background: linear-gradient(90deg, rgb(143, 120, 224) 45%, rgba(179, 139, 187, 0.947) 100%);
+    background: linear-gradient(90deg, $color_A1 45%, $color_A2 100%);
     background-repeat: repeat-y;
+    
 }
 
 
 button {
     height: 2rem;
-    background-color: #a20bd0;
+    background-color: $color_A3;
     border: none;
     border-radius: .5rem;
     margin: .2rem;
@@ -25,20 +34,17 @@ button {
     align-items: center;
     justify-content: center;
     color: rgb(190, 229, 244);
-    box-shadow: 5px 5px 8px 0px #3e1d8b;
+    box-shadow: 5px 5px 8px 0px $color_A3;
     transition: box-shadow .15s, transform .15s;
     touch-action: manipulation;
     cursor: pointer;
 
-}
-
-
-
-button:hover {
+    &:hover{
     opacity: .9;
-    background-color: #8d5cd7;
+    background-color: $color_A4;
     transition: ease .2s;
     transform: translateY(2px);
+    }
 }
 
 .disabled_button{
@@ -64,10 +70,13 @@ li {
 }
 
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
     button {
         font-size: .8rem;
         margin: .2rem;
+    }
+    input{
+        width: 200px;
     }
 }
 

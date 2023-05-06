@@ -15,7 +15,6 @@ export class HttpServiceService extends UnsubscribingService{
     super();
   }
 
-
   getAllTasks(): Observable<any> {
     return this.httpClient.get(this.pathUrl).pipe(map(response => {
       let post = [];

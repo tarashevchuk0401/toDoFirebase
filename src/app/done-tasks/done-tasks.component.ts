@@ -7,7 +7,7 @@ import { UnsubscribingService } from '../services/unsubscribing.service';
 @Component({
   selector: 'app-done-tasks',
   templateUrl: './done-tasks.component.html',
-  styleUrls: ['./done-tasks.component.css']
+  styleUrls: ['./done-tasks.component.scss']
 })
 export class DoneTasksComponent extends UnsubscribingService implements OnInit {
   doneTasks: Task[] = [];

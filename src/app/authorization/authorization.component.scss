@@ -1,8 +1,8 @@
+
 main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 form {
@@ -10,7 +10,6 @@ form {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 400px;
     margin: 2rem;
 }
 
@@ -22,7 +21,6 @@ label {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
     flex-grow: 1;
 }
 
@@ -33,22 +31,14 @@ label {
     color: rgb(130, 0, 244);
     font-weight: 700;
     margin-top: 1rem;
-    flex-grow: 2;
+    flex-grow: 1;
     flex-shrink: 0;
 }
 
  input{
     margin-top: 1rem;
     flex-shrink: 1;
-    flex-grow: 0;
  }
-
- .empty{
-    width: 116px;
-    flex-shrink: 1;
-}
-
-
 
 .error_form {
     transition: ease 1s;
@@ -57,7 +47,7 @@ label {
     font-weight: 600;
 }
 
-.all_buttons{
+.container_buttons{
  margin-top: 1rem;   
 }
 

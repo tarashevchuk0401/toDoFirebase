@@ -21,7 +21,6 @@ main {
     text-transform: lowercase;
     font-family: 'Vina Sans', cursive;
     cursor: pointer;
-    
 }
 
 .button_in_logo {
@@ -38,8 +37,8 @@ img{
 
 
 
-@media (max-width: 760px) {
+@media (max-width: 600px) {
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }

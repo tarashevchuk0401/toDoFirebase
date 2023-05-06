@@ -8,7 +8,7 @@ import { AuthServiceService } from '../services/auth-service.service';
 @Component({
   selector: 'app-authorization',
   templateUrl: './authorization.component.html',
-  styleUrls: ['./authorization.component.css']
+  styleUrls: ['./authorization.component.scss']
 })
 export class AuthorizationComponent {
 
@@ -41,18 +41,9 @@ export class AuthorizationComponent {
     )
   }
 
-
   onSwitchMode():void {
     this.isLoginMode = !this.isLoginMode;
   }
 
-  sessionStorageFalse(){
-    sessionStorage.setItem("isAuthenticated", '')
-    console.log( Boolean(sessionStorage.getItem("isAuthenticated")))
-  }
-  sessionStorageTrue(){
-    sessionStorage.setItem("isAuthenticated", 'sd')
-    console.log( Boolean(sessionStorage.getItem("isAuthenticated")))
-  }
 }
 

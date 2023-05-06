@@ -1,9 +1,8 @@
 <main>
-    <div class="empty"></div>
     <div class="content">
        <header>
         <button class="go_back" routerLink="/home">Back</button>
-        <h2>DONE   TASKS</h2>
+        <div class="done_task">DONE TASK</div>
         <div class="empty_in_header"></div>
        </header>
         <div *ngFor="let task of  doneTasks; let indexOfelement = index">
@@ -13,5 +12,4 @@
             </div>
         </div>
     </div>
-    <div class="empty"></div>
 </main>

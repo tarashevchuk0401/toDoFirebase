@@ -9,8 +9,6 @@
     box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
     margin: .5rem;
     border-left: 12px solid rgb(154, 99, 181);
-
-
 }
 
 textarea {
@@ -46,16 +44,12 @@ main{
     justify-content: center;
     flex-direction: column;
     flex-grow: 1;
+    max-width: 80%;
 }
 
-.empty {
- width: 4rem;
- flex-shrink: 1;
- flex-grow: 0;
-}
 
-@media (max-width: 760px) {
-    .empty{
-        width: 1px;
+@media (max-width: 600px) {
+    .container{
+        max-width: 95%;
     }
 }

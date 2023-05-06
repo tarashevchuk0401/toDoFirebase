@@ -4,13 +4,17 @@ header {
     justify-content: space-between;
 }
 
-h2 {
+.done_task {
     color: #93d6f1;
     font-size: 3rem;
-    width: 100%;
-    flex-grow: 1;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    text-align: center;
+    background: linear-gradient(90deg, rgba(165, 11, 210, 1) 45%, rgba(92, 130, 215, 0.9473039215686274) 100%);
+    width: 350px;
+    border-radius: 1rem;
+    font-family: 'Vina Sans', cursive;
+
 }
 
 .empty_in_header {
@@ -21,16 +25,13 @@ h2 {
 .container {
     display: flex;
     flex-direction: row;
-    width: 95%;
     margin: .5rem;
-
 }
 
 .number {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: 5%; */
     flex-grow: 0;
     font-size: 1.5rem;
     margin: .5rem;
@@ -39,8 +40,6 @@ h2 {
     box-shadow: 5px 5px 8px 0px rgba(66, 68, 90, 1);
     border-radius: .5rem;
     padding: .2rem .3rem;
-
-
 }
 
 .title {
@@ -62,7 +61,6 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    /* width: 100%; */
 }
 
 .empty {
@@ -71,16 +69,18 @@ main {
 }
 
 .content {
-    flex-grow: 1;
     flex-shrink: 1;
+    width: 80%;
 }
 
-@media (max-width: 760px) {
-    .empty {
-        width: 1px;
+@media (max-width: 600px) {
+    .content {
+        width: 97%;
     }
 
-    h2{
-        font-size: 2rem;
+    .done_task {
+        font-size: 1.6rem;
+        width: 180px;
     }
+
 }

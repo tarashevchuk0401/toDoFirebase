@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-logo',
   templateUrl: './logo.component.html',
-  styleUrls: ['./logo.component.css']
+  styleUrls: ['./logo.component.scss']
 })
 export class LogoComponent {  
   logout(){
