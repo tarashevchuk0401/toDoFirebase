@@ -1,12 +1,9 @@
 <main>
     <div class="container" *ngFor="let task of  currentTask">
-        <div class="title">{{task.title}}</div>
-        <textarea name="editTask" id="editTask" rows="10" [(ngModel)]="newText" placeholder="Change task ..."></textarea>
+        <textarea name="editTask" id="editTask" rows="10" [(ngModel)]="newText"></textarea>
         <div class="wrapper">
             <div class="all_buttons">
-                <button (click)="editTask()"
-                [ngClass]="{'disabled_button' : !newText}"
-                >Save</button>
+                <button (click)="editTask()" [ngClass]="{'disabled_button' : !newText}">Save</button>
                 <button (click)="goToHomeComponent()">Back</button>
             </div>
         </div>

@@ -34,14 +34,17 @@ export class TaskPageComponent extends UnsubscribingService implements OnInit {
         return result
       }),
       takeUntil(this.unsubscribe$))
-      .subscribe((data: any) => this.currentTask.push(data))
+      .subscribe((data: any) => {
+        this.currentTask.push(data);
+        this.newText = data.title;
+      })
   }
 
   editTask(): void {
-    if(this.newText.trim())
-    this.httpService.changeTask(this.currentTaskId, { title: this.newText }).pipe(takeUntil(this.unsubscribe$))
-    .subscribe(d => this.goToHomeComponent());
-   
+    if (this.newText.trim())
+      this.httpService.changeTask(this.currentTaskId, { title: this.newText }).pipe(takeUntil(this.unsubscribe$))
+        .subscribe(d => this.goToHomeComponent());
+
   }
 
   goToHomeComponent(): void {

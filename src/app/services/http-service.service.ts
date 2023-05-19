@@ -33,6 +33,7 @@ export class HttpServiceService extends UnsubscribingService{
   }
 
   deleteTask(id: string): Observable<any> {
+    console.log(id)
     return this.httpClient.delete('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/tasks/' + id + '.json')
   }
 
