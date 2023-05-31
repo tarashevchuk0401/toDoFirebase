@@ -3,7 +3,7 @@
         <h4>To do list</h4>
         <div>
             <img src="https://img.icons8.com/?size=512&id=1349&format=png" width=25px alt="">
-          <span>https://newtodofirebase.web.app/</span>
+          <span>https://newtodofirebase.web.app</span>
           <br>
           <br>
             <p>
