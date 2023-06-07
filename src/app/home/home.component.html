@@ -1,6 +1,3 @@
-
-
-
 <main>
     <div class="content_in_main">
         <nav>
@@ -13,12 +10,14 @@
         <div class="itemOfList" *ngFor="let task of  allTasks ;let indexOfelement=index">
             <div class="info number">{{indexOfelement +1 }}</div>
             <div class="info status" *ngIf="!task.isDone">
-                <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/wait.png" 
-                        alt="done"></button>
+                <button (click)="changeSatus(task.id, task.isDone)">
+                    <img src="assets/icons/wait.png" alt="done">
+                </button>
             </div>
             <div class="info status" *ngIf="task.isDone">
-                <button (click)="changeSatus(task.id, task.isDone)"> <img src="assets/icons/done.png" 
-                        alt="done"></button>
+                <button (click)="changeSatus(task.id, task.isDone)">
+                    <img src="assets/icons/done.png" alt="done">
+                </button>
             </div>
             <div class="title"> {{task.title}}</div>
             <div class="container_buttons">
