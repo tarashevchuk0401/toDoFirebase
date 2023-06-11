@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Task } from '../shared/Task';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, Subject, catchError, tap, throwError } from 'rxjs';
-import { User } from '../shared/User';
-import { AuthResponseData } from '../shared/AuthResponseData';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ import { AuthResponseData } from '../shared/AuthResponseData';
 export class AuthServiceService {
 
   isLoggedIn: boolean = false
-  userSub = new Subject<User>();
+  // userSub = new Subject<User>();
 
   constructor(private http: HttpClient) { }
 
@@ -24,14 +23,14 @@ export class AuthServiceService {
   signUp(email: string, password: string): Observable<Task> {
     sessionStorage.setItem("isAuthenticated", 'true');
     return this.http.post<Task>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E',
-      { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler), tap(this.handleUser.bind(this)))
+      { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler))
   }
 
 
   login(email: string, password: string): Observable<Task> {
     sessionStorage.setItem("isAuthenticated", 'true');
     return this.http.post<Task>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E`,
-      { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler), tap(this.handleUser.bind(this)))
+      { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler))
   }
 
   getErrorHandler(errorRes: HttpErrorResponse): Observable<never> {
@@ -54,14 +53,14 @@ export class AuthServiceService {
   }
 
 
-  private handleUser(response: AuthResponseData) {
-    const expireDate = new Date(new Date().getTime() + +response.expiresIn * 50000)
-    const user = new User(
-      response.email,
-      response.localId,
-      response.idToken,
-      expireDate
-    );
-    this.userSub.next(user);
-  }
+  // private handleUser(response: AuthResponseData) {
+  //   const expireDate = new Date(new Date().getTime() + +response.expiresIn * 50000)
+  //   const user = new User(
+  //     response.email,
+  //     response.localId,
+  //     response.idToken,
+  //     expireDate
+  //   );
+  //   this.userSub.next(user);
+  // }
 }
