@@ -21,14 +21,12 @@ export class AuthServiceService {
   }
 
   signUp(email: string, password: string): Observable<Task> {
-    sessionStorage.setItem("isAuthenticated", 'true');
     return this.http.post<Task>('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E',
       { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler))
   }
 
 
   login(email: string, password: string): Observable<Task> {
-    sessionStorage.setItem("isAuthenticated", 'true');
     return this.http.post<Task>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC2Ae4kMBlCsh3_rxbRCmmZyTieaAZiS1E`,
       { email, password, returnSecureToken: true }).pipe(catchError(this.getErrorHandler))
   }

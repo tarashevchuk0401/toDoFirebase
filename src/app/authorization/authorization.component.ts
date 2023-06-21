@@ -33,6 +33,8 @@ export class AuthorizationComponent {
     }
     authObs.subscribe(response => {
       this.router.navigate(['home']);
+      sessionStorage.setItem("isAuthenticated", 'true');
+
     },
       (errorMessage) => {
         this.error = errorMessage
