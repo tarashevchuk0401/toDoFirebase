@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Task } from '../shared/Task';
 import { Observable } from 'rxjs';
 import { AuthServiceService } from '../services/auth-service.service';
+import { Auth2Service } from '../services/auth2.service';
 
 @Component({
   selector: 'app-authorization',
@@ -16,7 +17,7 @@ export class AuthorizationComponent {
   error: string = '';
 
 
-  constructor(private router: Router, private authService: AuthServiceService){}
+  constructor(private router: Router, private authService: AuthServiceService, public auth2: Auth2Service){}
 
   onFormSubmit(authForm: NgForm): void{
     this.error = '';
@@ -34,7 +35,6 @@ export class AuthorizationComponent {
     authObs.subscribe(response => {
       this.router.navigate(['home']);
       sessionStorage.setItem("isAuthenticated", 'true');
-
     },
       (errorMessage) => {
         this.error = errorMessage
@@ -46,6 +46,7 @@ export class AuthorizationComponent {
   onSwitchMode():void {
     this.isLoginMode = !this.isLoginMode;
   }
+  
 
 }
 

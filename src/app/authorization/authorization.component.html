@@ -21,13 +21,16 @@
                 <div class="error_form" *ngIf="error">
                     {{error}}
                 </div>
-                <div class="container_buttons">
+                <button (click)="auth2.SignUp(email.value, password.value)">Sign Up</button>
+                <button (click)="auth2.SignIn(email.value, password.value)">Sign In</button>
+                <button (click)="auth2.ForgotPassword(email.value)">Reset password</button>
+                <!-- <div class="container_buttons">
                     <button (click)="onFormSubmit(authForm)" [ngClass]="{'disabled' : authForm.invalid}"  >{{isLoginMode ? "Login"
                         :"SignUp"}}</button>
                     <button (click)="onSwitchMode()"
                     [ngClass]="{'disabled_button' : authForm.invalid}"
                     >Go to {{isLoginMode ? "SignUp" : "Login"}}</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </form>

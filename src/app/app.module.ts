@@ -12,6 +12,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DoneTasksComponent } from './done-tasks/done-tasks.component';
 import { LogoComponent } from './logo/logo.component';
 
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environment } from '../environment/environment';
+import { Auth2Service } from './services/auth2.service';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +37,13 @@ import { LogoComponent } from './logo/logo.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
   ],
-  providers: [HttpServiceService],
+  providers: [HttpServiceService, Auth2Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -16,7 +16,8 @@ export class HttpServiceService extends UnsubscribingService{
   }
 
   getAllTasks(): Observable<any> {
-    return this.httpClient.get(this.pathUrl).pipe(map(response => {
+    return this.httpClient.get('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/user/' + sessionStorage.getItem('uid') + '/post.json')
+    .pipe(map(response => {
       let post = [];
       for (const key in response) {
         if (response.hasOwnProperty(key)) {
@@ -29,16 +30,16 @@ export class HttpServiceService extends UnsubscribingService{
   }
 
   addTask(newTitle: string): Observable<Task> {
-    return this.httpClient.post<Task>(this.pathUrl, { title: newTitle, isDone: false });
+    return this.httpClient.post<Task>('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/user/' + sessionStorage.getItem('uid') + '/post.json' , { title: newTitle, isDone: false });
   }
 
   deleteTask(id: string): Observable<any> {
     console.log(id)
-    return this.httpClient.delete('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/tasks/' + id + '.json')
+    return this.httpClient.delete('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/user/' + sessionStorage.getItem('uid') + '/post/' + id + '.json')
   }
 
   changeTask(taskId: string, newStatus: any): Observable<any> {
-    return this.httpClient.patch(('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/tasks/' + taskId + '.json'), newStatus)
+    return this.httpClient.patch(('https://newtodofirebase-default-rtdb.europe-west1.firebasedatabase.app/user/' + sessionStorage.getItem('uid') + '/post/' + taskId + '.json'), newStatus)
   }
 
   getDone(): Task[] {

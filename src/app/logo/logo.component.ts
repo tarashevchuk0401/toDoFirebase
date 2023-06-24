@@ -8,6 +8,6 @@ import { Observable } from 'rxjs';
 })
 export class LogoComponent {  
   logout(){
-    sessionStorage.setItem("isAuthenticated", '')
+    sessionStorage.setItem("uid", '')
   }
 }
